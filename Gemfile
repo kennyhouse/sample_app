@@ -5,6 +5,7 @@ gem 'rails', '3.2.3'
 group :development, :test do
 	gem 'sqlite3', '1.3.5'
 	gem 'rspec-rails', '2.9.0'
+	gem 'guard-rspec', '0.5.5'
 end
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -27,7 +28,14 @@ end
 gem 'jquery-rails', '2.0.1'
 
 group :test do
+	gem 'rspec-rails', '2.9.0'
 	gem 'capybara', '1.1.2'
+	#the following code solve the problem of the rb-fsevent, referenced by https://github.com/thibaudgg/rb-fsevent/issues/20
+	gem 'rb-fsevent', :git => 'git://github.com/ttilley/rb-fsevent.git', :branch => 'pre-compiled-gem-one-off'
+	#-----------------------------------------------------------------------------------------------------------
+	gem 'growl', '1.0.3'
+	gem 'guard-spork', '0.3.2'
+	gem 'spork', '0.9.0'
 end
 
 group :production do
